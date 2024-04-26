@@ -17,4 +17,10 @@ public class Enemy : MonoBehaviour
     {
         enemy.SetDestination(player.position);
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+            Destroy(gameObject);
+    }
 }
